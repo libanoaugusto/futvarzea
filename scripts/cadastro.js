@@ -1,7 +1,19 @@
-var lista_time =[]
+var lista_time = JSON.parse(localStorage.getItem('times'))
+if(lista_time == null) {
+   lista_time = []
+}
+const indice = location.search.split('=')[1]
+const formEdicao = indice !== undefined
+if(formEdicao){
+    
+    preencheFormulario(indice)
+}
 
+function preencheFormulario(indice){
+
+}
 function salvar() {
-    let nome_time = document.getElementById("nome").value
+    let nome_time=  document.getElementById("nome").value
     let escudo_time = document.getElementById("escudo_time").value
     let contato_time = document.getElementById("contato_time").value
     let cor_time = document.getElementById("cor_uniforme").value
@@ -13,10 +25,12 @@ function salvar() {
         escudo: escudo_time,
         contato: contato_time,
         cor: cor_time,
-        endereco: endereco_campo,
+        local: endereco_campo,
         horario: horario_partida,
 
     }
     lista_time.push(time)
-
+    localStorage.setItem('times', JSON.stringify(lista_time))
 }
+
+
