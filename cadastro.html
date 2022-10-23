@@ -4,38 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastro</title>
+    <link rel="stylesheet" href="./estilos/bootstrap/css/bootstrap.min.css">
+    <title>Cadastro</title>
     
 </head>
 <body>
-    <h1>cadastro time</h1>
+    <div class="container">
+       
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Times</a>
+                        </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li ><a href="./index.html">Início</a></li>
+                            <li class="active"><a href="./cadastro.html">Cadastro</a></li>
+                            <li><a href="./tabela.html">Tabela</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </nav>
+            
+            
+                
+                
+                
+                
+    <h1>Cadastro de time</h1>
     <form action="cadastro time ">
-        <fieldset>
-            <legend>dados do time </legend>
+        <div class="form-group">
+            <legend>Dados do time </legend>
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome">
+            <input class= "form-control" placeholder="nome do time" id="nome" type= "text"name="nome">
             <br>
-            <label for="escudo_time">escudo do time</label>
-            <input type="file" id="escudo_time" name="escudo">
+            <label for="escudo_time">Escudo do time</label>
+            <input form-control-file type="file" id="escudo_time" name="escudo">
             <br>
-            <label for="contato_time">contato do responsavel</label>
-            <input type="text" id="contato_time" name="contato">
+            <label for="contato_time">Contato do responsavel</label>
+            <input class="form-control" placeholder="contato do time" id="contato_time" type="text" name="contato">
             <br>
-            <label for="cor_uniforme">cor do uniforme</label>
-            <input type="color" id="cor_uniforme" name="=cor">
+            <label for="cor_uniforme">Cor do uniforme</label>
+            <input class="form-control" type="color" id="cor_uniforme" name="cor">
             <br>
-            <label for="endereco_campo">endereço do campo</label>
-            <input type="text" id="endereco_campo" name="endereco">
+            <label for="endereco_campo">Endereço do campo</label>
+            <input class="form-control" placeholder="endereco do campo" type="text" id="endereco_campo" name="endereco">
             <br>
-            <label for="horario_partida">horario da partida</label>
-            <input type="datetime-local"id="horario_partida" name="horario">
+            <label for="horario_partida">Horario da partida</label>
+            <input class="form-control" placeholder="horario da partida" type="datetime-local"id="horario_partida" name="horario">
             <br>
-        </fieldset>    
-        <button type="button" id="btn-salvar" onclick="salvar()">salvar</button>
+        </div>
+        <div class="=formgroup">    
+        <button class="btn btn-primary" type="button" id="btn-salvar" onclick="salvar()">salvar</button>
     </form>
-    <a href="./tabela.html">times cadastrados</a>
-
     
+    
+    
+</div>
 </body>
 <script src="./scripts/cadastro.js"></script>
 

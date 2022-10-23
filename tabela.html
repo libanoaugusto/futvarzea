@@ -4,25 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos/bootstrap/css/bootstrap.min.css">
     <title>Times</title>
 </head>    
 <body>
+    <div class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Times</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                <li ><a href="./index.html">Início</a></li>
+                <li ><a href="./cadastro.html">Cadastro</a></li>
+                <li class="active"><a href="#">Tabela</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+    
     <h1>Times</h1>
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>time</th>
-                <th>escudo</th>
-                <th>contato</th>
-                <th>cor</th>
-                <th>local</th>
-                <th>horario</th>
-                <th>acoes</th>
+                <th>Time</th>
+                <th>Escudo</th>
+                <th>Contato</th>
+                <th>Cor</th>
+                <th>Local</th>
+                <th>Horario</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody id="tabela-times"></tbody>
     </table>
-    <a href="./cadastro.html">novo time</a>
+
+</div>
 </body>
 <script src="./scripts/tabela.js"></script>
 </html>
