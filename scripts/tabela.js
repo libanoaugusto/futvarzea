@@ -1,5 +1,11 @@
-let times = JSON.parse(localStorage.getItem('times'))
+const url = 'http://ntcursoapi-env.eba-hvwnzgx7.us-east-1.elasticbeanstalk.com/nt-curso-api/times/'
 
+fetch(url).then(function (resposta) {
+    console.log('Sucesso!', resposta.status)
+    return resposta.json()
+})
+.then(function (times) {
+    
 let tabela = document.getElementById('tabela-times')
 
 times.forEach(function(time, indice) {
@@ -28,17 +34,24 @@ times.forEach(function(time, indice) {
     imgEditar.style.width = '15px'
     acoes.appendChild(imgEditar)
 
-    img.addEventListener('click', () => apagar (indice))
-    imgEditar.addEventListener('click',() => editar(indice))
+    img.addEventListener('click', () => apagar (time.id))
+    imgEditar.addEventListener('click',() => editar(time.id))
+})
+    
+})
+.catch(function (erro) {
+    console.warn('Algo deu errado', erro)
 })
 
-function editar (indice) {
-    window.location.href='./cadastro.html?indice=' + indice
+function editar (id) {
+    window.location.href='./cadastro.html?id=' + id
 }
-function apagar(indice){
-    times.splice(indice,1)
-    localStorage.setItem('times', JSON.stringify(times))
-    document. location.reload()
+function apagar(id){
+    fetch(url + id, { method: 'DELETE' })
+    .then(function(resposta) {
+        console.log('Apagado com sucesso', resposta)
+        document.location.reload()
+    })
 }
 
 
